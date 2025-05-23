@@ -1,0 +1,31 @@
+name: Processa Nova Oferta
+on:
+  issues:
+    types: [opened]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  oferta:
+    if: "contains(github.event.issue.labels.*.name, 'oferta-disponivel')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install -r scripts/requirements.txt
+      - name: Run script
+        env:
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # If PyGithub is used
+        run: python scripts/create_oferta_from_issue.py
+      - name: Commit & push data
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: '_data/ofertas_ativas.json'
+          message: 'feat(oferta): adiciona oferta #${{ github.event.issue.number }}'

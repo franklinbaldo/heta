@@ -1,0 +1,66 @@
+name: Deploy PWA
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # Allow manual trigger
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true # For deployments, cancel-in-progress: true is common
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions: # Added permissions for GitHub Pages deployment
+      contents: read
+      pages: write
+      id-token: write
+    environment: # Added environment for GitHub Pages
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all history for all branches and tags
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Copy data to PWA static assets (if not already there)
+        # This step ensures that _data/ofertas_ativas.json is available for the PWA to fetch.
+        # The PWA expects it at /_data/ofertas_ativas.json relative to its deployed root.
+        # SvelteKit's static adapter will copy contents of `pwa/static` to the build output.
+        run: |
+          mkdir -p pwa/static/_data
+          if [ -f _data/ofertas_ativas.json ]; then
+            cp _data/ofertas_ativas.json pwa/static/_data/ofertas_ativas.json
+          else
+            echo "[]" > pwa/static/_data/ofertas_ativas.json # Create empty if not found
+          fi
+          echo "Contents of _data:"
+          ls -R _data
+          echo "Contents of pwa/static/_data:"
+          ls -R pwa/static/_data
+
+
+      - name: Install PWA dependencies and Build
+        run: |
+          cd pwa
+          npm ci
+          npm run build
+        env:
+         NODE_ENV: production # Important for SvelteKit base path
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./pwa/build # SvelteKit with adapter-static builds to 'build' by default
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,18 @@
+name: "✅ Cadastro de Entidade Receptora"
+title: "[Entidade] {{ nome }}"
+labels: [entidade-pendente]
+body:
+  - type: input
+    id: cnpj
+    attributes: { label: CNPJ }
+    validations: { required: true }
+  - type: input
+    id: email
+    attributes: { label: E-mail para contato }
+    validations: { required: true }
+  - type: input
+    id: telefone
+    attributes: { label: Telefone/WhatsApp }
+  - type: textarea
+    id: descricao
+    attributes: { label: Descrição curta da entidade }
