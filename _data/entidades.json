@@ -1,0 +1,44 @@
+[
+  {
+    "id_issue": 201,
+    "nome_entidade": "Associação Beneficente Prato Cheio",
+    "cnpj": "11.222.333/0001-11",
+    "email": "contato@pratocheio.org",
+    "telefone": "(11) 91111-1111",
+    "descricao": "Distribuição de alimentos para famílias carentes na Zona Leste de São Paulo.",
+    "cep": "03001-000",
+    "endereco_completo": "Rua da Mooca, 1000, Mooca, São Paulo, SP",
+    "latitude": -23.5563,  
+    "longitude": -46.6082,
+    "data_cadastro": "2023-10-15",
+    "status": "ativa"
+  },
+  {
+    "id_issue": 202,
+    "nome_entidade": "Lar Esperança Feliz",
+    "cnpj": "44.555.666/0001-22",
+    "email": "laresperanca@example.com",
+    "telefone": "(21) 92222-2222",
+    "descricao": "Abrigo infantil no Rio de Janeiro.",
+    "cep": "20040-004",
+    "endereco_completo": "Av. Rio Branco, 100, Centro, Rio de Janeiro, RJ",
+    "latitude": -22.9035,
+    "longitude": -43.1764,
+    "data_cadastro": "2023-11-01",
+    "status": "ativa"
+  },
+  {
+    "id_issue": 203,
+    "nome_entidade": "Cozinha Comunitária Bom Samaritano",
+    "cnpj": "77.888.999/0001-33",
+    "email": "cozinhabs@example.com",
+    "telefone": "(31) 93333-3333",
+    "descricao": "Fornece refeições diárias para população de rua em Belo Horizonte.",
+    "cep": "30110-000",
+    "endereco_completo": "Av. Afonso Pena, 500, Centro, Belo Horizonte, MG",
+    "latitude": -19.9191, 
+    "longitude": -43.9386,
+    "data_cadastro": "2023-11-20",
+    "status": "ativa"
+  }
+]

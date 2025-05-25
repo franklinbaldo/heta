@@ -14,7 +14,7 @@ This list tracks key development tasks for the Heta project, focusing on ideas d
 
 ## Efficiency & Food Rescue Maximization
 
-- [ ] **Geo-matching for Donations:**
+- [ ] **Geo-matching for Donations:** (Core logic for distance calculation and finding nearest entities implemented in `scripts/create_oferta_from_issue.py` and `scripts/utils.py`. Sample data for schools and entities created. Entity registration workflow, school data collection, robust issue parsing, and live GitHub issue commenting are conceptual or pending full implementation.)
     - Enhance backend scripts to automatically recommend the nearest registered entity when a new offer is made.
     - *Value: Optimizes logistics, reduces food waste by facilitating quicker pickups, and distributes food efficiently.*
 

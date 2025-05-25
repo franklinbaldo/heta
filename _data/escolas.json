@@ -1,0 +1,26 @@
+[
+  {
+    "codinep": "11000001",
+    "nome_escola": "Escola Modelo 1 - Centro SP",
+    "endereco": "Rua Direita, 100, Sé, São Paulo, SP",
+    "cep": "01002-001",
+    "latitude": -23.5500,
+    "longitude": -46.6300
+  },
+  {
+    "codinep": "11000002",
+    "nome_escola": "Escola Modelo 2 - Zona Sul RJ",
+    "endereco": "Av. Atlântica, 1702, Copacabana, Rio de Janeiro, RJ",
+    "cep": "22021-001",
+    "latitude": -22.9712,
+    "longitude": -43.1826
+  },
+  {
+    "codinep": "11000003", 
+    "nome_escola": "Escola Modelo 3 - BH",
+    "endereco": "Rua da Bahia, 1000, Lourdes, Belo Horizonte, MG",
+    "cep": "30160-011",
+    "latitude": -19.9250,
+    "longitude": -43.9400
+  }
+]
