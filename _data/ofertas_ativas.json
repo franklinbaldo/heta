@@ -1,0 +1,23 @@
+[
+  {
+    "escola_codinep": "11000001",
+    "item": "Arroz Parboilizado Tipo 1",
+    "quantidade": "50 kg",
+    "validade": "31/12/2024",
+    "observacoes": "Pacotes de 5kg. Lote lacrado, armazenado em local seco."
+  },
+  {
+    "escola_codinep": "11000002",
+    "item": "Feijão Preto Tipo 1",
+    "quantidade": "30 kg",
+    "validade": "30/11/2024",
+    "observacoes": "Pacotes de 1kg."
+  },
+  {
+    "escola_codinep": "11000003",
+    "item": "Leite em Pó Integral",
+    "quantidade": "100 latas",
+    "validade": "01/06/2025",
+    "observacoes": "Latas de 400g. Caixa original."
+  }
+]

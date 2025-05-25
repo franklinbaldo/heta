@@ -4,7 +4,7 @@ This list tracks key development tasks for the Heta project, focusing on ideas d
 
 ## Core Functionality & Accessibility
 
-- [ ] **Implement Basic Offer Listing in PWA:**
+- [x] **Implement Basic Offer Listing in PWA:**
     - Develop the initial PWA interface to fetch and display active food offers from `_data/ofertas_ativas.json`.
     - *Value: Provides a user-friendly way for entities to view available donations.*
 
