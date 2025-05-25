@@ -8,7 +8,7 @@ This list tracks key development tasks for the Heta project, focusing on ideas d
     - Develop the initial PWA interface to fetch and display active food offers from `_data/ofertas_ativas.json`.
     - *Value: Provides a user-friendly way for entities to view available donations.*
 
-- [ ] **GitHub OAuth Integration for PWA:**
+- [ ] **GitHub OAuth Integration for PWA:** (Client-side flow for redirect and code retrieval implemented. Secure backend for token exchange, user data fetching, and API actions is pending.)
     - Allow users to authenticate via GitHub within the PWA to create/comment on offers directly.
     - *Value: Streamlines user workflow, improves accessibility, and encourages participation.*
 
